@@ -2,9 +2,9 @@ import React from 'react';
 import ProductCard from '../components/ProductCard';
 import { useProducts } from '../context/ProductProvider';
 
-const Cart = () => {
+const Wishlist = () => {
   const {
-    state: { cart, loading, error },
+    state: { wishlist, loading, error },
   } = useProducts();
 
   let content;
@@ -15,12 +15,12 @@ const Cart = () => {
   if (error) {
     content = <p>Something went wrong</p>;
   }
-  if (!loading && !error && cart.length === 0) {
+  if (!loading && !error && wishlist.length === 0) {
     content = <p>Nothing to show, product list is empty</p>;
   }
-  if (!loading && !error && cart.length) {
+  if (!loading && !error && wishlist.length) {
     {
-      content = cart.map((product) => (
+      content = wishlist.map((product) => (
         <ProductCard key={product._id} product={product} />
       ));
     }
@@ -33,4 +33,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default Wishlist;

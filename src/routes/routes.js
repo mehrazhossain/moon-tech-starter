@@ -1,30 +1,35 @@
-import { createBrowserRouter } from "react-router-dom";
-import Main from "../layout/Main";
-import About from "../pages/About";
-import Cart from "../pages/Cart";
-import Home from "../pages/Home";
-import TopRated from "../pages/TopRated";
+import { createBrowserRouter } from 'react-router-dom';
+import Main from '../layout/Main';
+import About from '../pages/About';
+import Cart from '../pages/Cart';
+import Home from '../pages/Home';
+import TopRated from '../pages/TopRated';
+import Wishlist from '../pages/Wishlist';
 
 const routes = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Main />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <Home />,
       },
       {
-        path: "about",
+        path: 'about',
         element: <About />,
       },
       {
-        path: "top-rated",
+        path: 'top-rated',
         element: <TopRated />,
       },
       {
-        path: "cart",
+        path: 'cart',
         element: <Cart />,
+      },
+      {
+        path: 'wishlist',
+        element: <Wishlist />,
       },
     ],
   },
